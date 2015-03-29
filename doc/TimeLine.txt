@@ -1,0 +1,56 @@
+2014-10-29 Project Assigned.
+
+2014-11-04  Week 11
+    Present:
+        Scot Andre
+        Juan Recinos
+        Katie Shiver
+        Patrick Skelly
+    We discussed the project and produced a draft UML diagram
+
+2014-11-05  Week 11
+    Presented UML to Dr. Carrington in class.  She recommended several changes.
+
+2014-11-11  Week 12  5:00 to 6:30
+    The four of us regrouped and redesigned the UML to better match 
+    Dr. Carrington's suggestions.
+
+2014-11-15  Week 12  8:30 to 1:00
+    Saturday morning the four of us met at Bush to plan and start coding the
+    project. Writing 11 classes.
+    
+2014-11-17  Week 
+    Presented code and redisgned UML to Dr. Carrington in class.  She made 
+    several suggestions to improve the code.
+    
+2014-11-18  Week  5:00 to 6:40
+    Met briefly to regroup and plan to implement Dr. Carrington's suggestions.
+    Made changes to UML.
+    
+2014-11-22
+    Don't remember what we did.
+
+2014-11-24  Week 14 in Class
+    Had in class discussion and code review with Dr. Carrington.  We discussed
+    so issues we were having with the code and Dr. Carrington suggested that we 
+    use composite pattern.
+
+2014-11-26  Week  Wednesday 5:00 to 9:30
+    Scot, Patrick and Katie met and discussed using the Composite Pattern.  
+    Sketched a rough draft of the GUI design. 
+    
+2014-11-29  Week  Saturday 8:30 - 3:00
+    Scot, Patrick and Katie met and completely rewrote the code from the ground 
+    up implementing the composite pattern suggested by Dr. Carrington.  We also
+    started to implement the GUI and got most of it working.
+    
+2014-12-01  Week  
+    In class code review.
+    
+
+Katie & Patrick worked on sequence and use diagrams and helped me with UML
+Katie, Patrick & Juan worked quite a bit on initial design
+Patrick & Katie performed most of the QA testing
+Juan worked on the GUI and data dictionary
+Scot typed the code
+Scot completed the composite pattern design

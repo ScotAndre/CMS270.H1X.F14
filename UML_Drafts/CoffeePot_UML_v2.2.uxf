@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>260</w>
+      <h>580</h>
+    </coordinates>
+    <panel_attributes>::ChangeMachine
+--
+-nickels = 0: int
+-dimes = 0: int
+-quarters = 0: int
+-dollars = 0: int
+-cashBalance = 0: int
+-rCardBalance = 0: int
+-moneyInserted = 0: int
+-totalPurchase = 0: int
+-payWithRCard = false: boolean
+--
++ChangeMachine(): ctor
++selectPaymentType(): void
++setPaymentToRCard(): void
++setPaymentToCash(): void
++getPaymentType(): boolean
++checkOut(): void
++coinReturn(): void
++getInsertedAmount(): int
++hasPaidEnough(): boolean
++getTotalBankBalance(): int
++getRCardBalance(): int
++getCashBalance(): int
++getTotalPurchase(): int
++addToPurchase(int itemPrice): void
++printReport(): void
++makeChange(int change): void
++insertNickel(): void
++insertDime(): void
++insertQuarter(): void
++insertDollar(): void
++returnNickel(int numToReturn): void
++returnDime(int numToReturn): void
++returnQuarters(int numToReturn): void
++returnDollars(int numToReturn): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>0</y>
+      <w>320</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>::ProductList
+--
+-allCondiments: ArrayList&lt;Condiment&gt;
+-cream = new Cream(): Condiment
+-sugar = new Sugar(): Condiment
+-lemon = new Lemon(): Condiment
+-allBeverages: ArrayList&lt;Beverage&gt;
+-coffee = new Coffee(): Beverage
+-decaf = new Decaf(): Beverage
+-tea = new Tea(): Beverage
+-soup = new Soup(): Beverage
+-coffeeCondiments: BeverageComponent
+--
++ProductList(): ctor
+-allCondiments(): void
+-allBeverages(): void
++getAllCondiments(): ArrayList
++getAllBeverages(): ArrayList
++getCoffeeCondiments(): BeverageComponent
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>0</y>
+      <w>280</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>::Coffee
+--
+-name: String
+-description: String
+-inventory: int
+-PRICE: int
+-condiments: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++hasEnough(int): boolean
++isAcceptableCondiment(String): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>0</y>
+      <w>280</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>::Decaf
+--
+-name: String
+-description: String
+-inventory: int
+-PRICE: int
+-condiments: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++isAcceptableCondiment(String): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>630</y>
+      <w>280</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>::Soup
+--
+
+-name: String
+-description: String
+-inventory: int
+-PRICE: int
+-condiments: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++isAcceptableCondiment(String): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>630</y>
+      <w>280</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>::Tea
+--
+-name: String
+-description: String
+-inventory: int
+-PRICE: int
+-condiments: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++isAcceptableCondiment(String): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>630</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>::Beverage
+--
+-name: String
+-description: String
+-inventory: int
+-price: int
+--
++Beverage(): ctor
++getName(): String
++getDescription(): String
++getPrice(): int
++dispense(): void
++print(): void
++isAcceptableCondiment(String): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>370</y>
+      <w>370</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>/::BeverageComponent/
+--
+--
++add(BeverageComponent): void
++remove(BeverageComponent): void
++getChild(int): BeverageComponent
++getName(): String
++getDescription(): String
++getPrice(): int
++getInventory(): int
++isAcceptableCondiment(BeverageComponent): boolean
++dispense(): void
++print(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>360</y>
+      <w>360</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>::Menu
+--
+-menuComponents: ArrayList&lt;BeverageComponent&gt;
+-name: String
+-description: String
+--
++Menu(String, String): ctor
++add(BeverageComponent): void
++remove(BeverageComponent): void
++getChild(int): BeverageComponent
++getName(): String
++getDescription(): String
++print(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>920</y>
+      <w>170</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>::Condiment
+--
+-name: String
+-description: String
+-inventory: int
+--
++Condiment(): ctor
++getName(): String
++getDescription(): String
++getInventory(): int
++print(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>920</y>
+      <w>300</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>::Order
+--
+-order: ArrayList&lt;BeverageComponent&gt;
+--
++Order(): ctor
++add(BeverageComponent): void
++remove(BeverageComponent): void
++getOrder(): ArrayList&lt;BeverageComponent&gt;
++cancelOrder(): void
++dispense(): void
++printOrder(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>920</y>
+      <w>170</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>::Cream
+--
+-name: String
+-description: String
+-inventory: int
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++dispense(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>920</y>
+      <w>170</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>::Lemon
+--
+-name: String
+-description: String
+-inventory: int
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++dispense(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>720</y>
+      <w>170</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>::Sugar
+--
+-name: String
+-description: String
+-inventory: int
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++dispense(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1120</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>::CoffeePotGui2
+--
+-creamWanted: int
+-lemonWanted: int
+-sugarWanted: int
+--
++CoffeePotGui2(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>1120</y>
+      <w>320</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>::CoffeePot
+--
+~allMenus: BeverageComponent
+--
++CoffeePot(BeverageComponent): ctor
++printMenu(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>1120</y>
+      <w>170</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>::CoffeePotMain
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>182</w>
+      <h>371</h>
+    </coordinates>
+    <panel_attributes>::ChangeMachine
+--
+-nickels = 0: int
+-dimes = 0: int
+-quarters = 0: int
+-dollars = 0: int
+-cashBalance = 0: int
+-rCardBalance = 0: int
+-moneyInserted = 0: int
+-payWithRCard = false: boolean
+--
++ChangeMachine(): ctor
++selectPaymentType(): void
++setPaymentToRCard(): void
++setPaymentToCash(): void
++getPaymentType(): boolean
++insertNickel(): void
++insertDime(): void
++insertQuarter(): void
++insertDollar(): void
++checkOut(int totalBill): void
++returnNickel(int numToReturn): void
++returnDime(int numToReturn): void
++returnQuarters(int numToReturn): void
++returnDollars(int numToReturn): void
++checkInsertedMoney(): int
++hasPaidEnough(int totalBill): boolean
++totalBalance(): int
++getRCardBalance(): int
++getCashBalance(): int
++makeChange(int change): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>189</x>
+      <y>0</y>
+      <w>329</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>::ProductList
+--
+-allCondiments = new ArrayList&lt;Condiment&gt;(): ArrayList&lt;Condiment&gt;
+-cream = new Cream(): Condiment
+-sugar = new Sugar(): Condiment
+-lemon = new Lemon(): Condiment
+-allBeverages = new ArrayList&lt;Beverage&gt;(): ArrayList&lt;Beverage&gt;
+-coffee = new Coffee(): Beverage
+-decaf = new Decaf(): Beverage
+-tea = new Tea(): Beverage
+-soup = new Soup(): Beverage
+-coffeeCondiments = new Menu(): BeverageComponent
+--
++ProductList(): ctor
+-allCondiments(): void
+-allBeverages(): void
++getAllCondiments(): ArrayList
++getAllBeverages(): ArrayList
++getCoffeeCondiments(): BeverageComponent
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>679</x>
+      <y>0</y>
+      <w>238</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>::Coffee
+--
+-name = "Coffee": String
+-description = "Black Coffee": String
+-inventory = 100: int
+-PRICE = 35: int
+-condiments = { "Cream", "Sugar" }: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++hasEnough(int num): boolean
++isAcceptableCondiment(String condiment): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>924</x>
+      <y>0</y>
+      <w>238</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>::Beverage
+--
+-name: String
+-description: String
+-inventory: int
+-price: int
+--
++Beverage(): ctor
++getName(): String
++getDescription(): String
++getPrice(): int
++dispense(): void
++print(): void
++isAcceptableCondiment(String condiment): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>378</y>
+      <w>238</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>::Decaf
+--
+-name = "Decaf": String
+-description = "Decaf Coffee": String
+-inventory = 100: int
+-PRICE = 35: int
+-condiments = { "Cream", "Sugar" }: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++isAcceptableCondiment(String condiment): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>245</x>
+      <y>378</y>
+      <w>238</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>::Soup
+--
+-name = "Soup": String
+-description = "Chicken Noodle": String
+-inventory = 100: int
+-PRICE = 75: int
+-condiments = {}: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++isAcceptableCondiment(String condiment): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>378</y>
+      <w>245</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>::Tea
+--
+-name = "Tea": String
+-description = "Black Tea": String
+-inventory = 100: int
+-PRICE = 60: int
+-condiments = { "Cream", "Lemon", "Sugar" }: String[]
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++getPrice(): int
++dispense(): void
++isAcceptableCondiment(String condiment): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>378</y>
+      <w>336</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>/::BeverageComponent/
+--
+--
++add(BeverageComponent menuComponent): void
++remove(BeverageComponent menuComponent): void
++getChild(int index): BeverageComponent
++getName(): String
++getDescription(): String
++getPrice(): int
++hasEnough(): boolean
++isAcceptableCondiment(BeverageComponent menuComponent): boolean
++dispense(): void
++print(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>553</y>
+      <w>252</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>::Menu
+--
+-menuComponents: ArrayList
+-name: String
+-description: String
+--
++Menu(String name, String description): ctor
++add(BeverageComponent menuComponent): void
++remove(BeverageComponent menuComponent): void
++getChild(int index): BeverageComponent
++getName(): String
++getDescription(): String
++print(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>434</x>
+      <y>553</y>
+      <w>119</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>::Condiment
+--
+-name: String
+-description: String
+-inventory: int
+--
++Condiment(): ctor
++getName(): String
++getDescription(): String
++print(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>553</y>
+      <w>196</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>::Cream
+--
+-name = "Cream": String
+-description = "Non-Dairy Creamer": String
+-inventory = 100: int
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++dispense(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>763</x>
+      <y>553</y>
+      <w>196</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>::Lemon
+--
+-name = "Lemon": String
+-description = "Lemon Concentrate": String
+-inventory = 100: int
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++dispense(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>721</y>
+      <w>189</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>::Sugar
+--
+-name = "Sugar": String
+-description = "All-Natural Sugar": String
+-inventory = 100: int
+--
++getName(): String
++getDescription(): String
++getInventory(): int
++dispense(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>196</x>
+      <y>721</y>
+      <w>224</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>::CoffeePot
+--
+~allMenus: BeverageComponent
+--
++CoffeePot(BeverageComponent allMenus): ctor
++printMenu(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>721</y>
+      <w>105</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>::CoffeePotGui
+--
+-contentPane: JPanel
+--
++CoffeePotGui(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>721</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>::CoffeePotMain
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
